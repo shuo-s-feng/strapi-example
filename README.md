@@ -66,3 +66,18 @@ This will:
 1. Create necessary AWS infrastructure using CDK
 2. Deploy your Strapi application to AWS Elastic Beanstalk
 3. Configure auto-scaling and load balancing
+
+## ⚠️ Important Future Considerations
+
+### Environment Variables
+
+- Update all sensitive information in `.env` files before production deployment
+- Consider using AWS Secrets Manager or Parameter Store for production secrets
+- Ensure different environments (staging/prod) have different secrets
+
+### Database
+
+- Current setup uses SQLite which is not suitable for production
+- Recommended to migrate to a managed database service like AWS RDS
+- Consider using PostgreSQL or MySQL for better scalability and reliability
+- Update database connection configuration in `.env` files accordingly
